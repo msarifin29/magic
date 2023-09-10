@@ -12,13 +12,9 @@ Initializing 🎯
 mason init
 ```
 
-copy in mason.yaml
+Usage
 ```
-bricks:
-  template:
-    git:
-      url: https://github.com/msarifin29/magic.git
-      path: bricks/template
+mason add template --git-url https://github.com/msarifin29/magic --git-path bricks/template
 ```
 
 Next 🍺
@@ -31,22 +27,4 @@ Usage
 ```
  mason make template
 ```
-<!-- Structure Folder template
- ```
-src/
-├─ common_widgets/
-│  ├─ responsive_layout_builder.dart
-├─ constant/
-│  ├─ app_string.dart
-│  ├─ base_assets.dart
-│  ├─ breakpoint.dart
-│  ├─ sizes.dart
-│  ├─ themes/
-│  │  ├─ app_color.dart
-│  │  ├─ font_manager.dart
-├─ routing/
-│  ├─ app_route.dart
-├─ utils/
-├─ exceptions/
-├─ features/
-``` -->
+
