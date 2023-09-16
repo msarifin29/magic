@@ -2,9 +2,9 @@ import 'package:equatable/equatable.dart';
 import 'data_api_failure.dart';
 
 class ConstantErrorMessage {
-  final String connectionError = "messageConnectionFailure";
-  final String connectionRefused = "statusCode was called on null";
-  final String unknownError = "unknown error";
+  final String connectionError = "No Connection Internet";
+  final String connectionRefused = "StatusCode was called on Null";
+  final String unknownError = "Unknown Error";
 }
 
 abstract class Failure extends Equatable {}
