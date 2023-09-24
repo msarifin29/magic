@@ -10,16 +10,16 @@ class ConstantErrorMessage {
 abstract class Failure extends Equatable {}
 
 class ServerFailure extends Failure {
-  final DataApiFailure dataApiFailure;
+  final String errorMessage;
 
-  ServerFailure(this.dataApiFailure);
+  ServerFailure(this.errorMessage);
 
   @override
-  List<Object?> get props => [dataApiFailure];
+  List<Object?> get props => [errorMessage];
 
   @override
   String toString() {
-    return "ServerFailure(dataApiFailure: $dataApiFailure)";
+    return "ServerFailure(errorMessage: $errorMessage)";
   }
 }
 
