@@ -1,0 +1,9 @@
+export 'data/datasources/{{feature.snakeCase()}}_locale_datasource.dart';
+export 'data/datasources/{{feature.snakeCase()}}_remote_datasource.dart';
+export 'data/models/{{feature.snakeCase()}}_models.dart';
+export 'data/repositories/{{feature.snakeCase()}}_repository_impl.dart';
+export 'domain/repositories/{{feature.snakeCase()}}_repository.dart';
+export 'domain/usecases/{{feature.snakeCase()}}_usecases.dart';
+export 'presentation/bloc/{{feature.snakeCase()}}_bloc.dart';
+export 'presentation/ui/pages/{{feature.snakeCase()}}_pages.dart';
+export 'presentation/ui/widgets/{{feature.snakeCase()}}_widgets.dart';
