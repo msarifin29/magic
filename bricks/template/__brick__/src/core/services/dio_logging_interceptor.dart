@@ -18,10 +18,15 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
   @override
   Future onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) => client
-          ..badCertificateCallback =
-              (X509Certificate cert, String host, int port) => true;
+    (_dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
+      final HttpClient client = HttpClient(
+        context: SecurityContext(
+          withTrustedRoots: false,
+        ),
+      );
+      client.badCertificateCallback = (cert, host, port) => true;
+      return client;
+    };
     debugPrint(
         '--> ${options.method.toUpperCase()} ${options.baseUrl + options.path}');
     if (options.headers.containsKey(BaseUrlConfig.requiredToken)) {
@@ -52,7 +57,7 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
   }
 
   @override
-  Future onError(DioError err, ErrorInterceptorHandler handler) async {
+  Future onError(DioException err, ErrorInterceptorHandler handler) async {
     debugPrint(
         '<-- ${err.message} ${(err.response?.requestOptions != null ? ((err.response?.requestOptions.baseUrl ?? '') + (err.response?.requestOptions.path ?? '')) : 'URL')}');
 
@@ -82,7 +87,7 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
             ),
           );
           return handler.resolve(response);
-        } on DioError catch (error) {
+        } on DioException catch (error) {
           return handler.next(error);
         }
       }
