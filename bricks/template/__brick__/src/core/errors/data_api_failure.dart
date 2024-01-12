@@ -1,33 +1,33 @@
 import 'package:equatable/equatable.dart';
 
 /// Class model ini berfungsi untuk menyimpan info-info kegagalan dari API
-/// [statusCode] nilai respons kode dari API
-/// [message] message yang ada di respon API
-/// [httpMessage] message yang dibuat http request atau Dio
+/// [code] nilai respons kode dari API
+/// [status] status yang ada di respon API
+/// [message] message yang dibuat http request atau Dio
 /// [errorData] informasi error tambahan dari respon API, mis : validasi field
 
 class DataApiFailure extends Equatable {
-  final int? statusCode;
+  final int? code;
+  final String? status;
   final String? message;
-  final String? httpMessage;
   final Map<String, dynamic>? errorData;
   const DataApiFailure({
-    this.statusCode,
+    this.code,
+    this.status,
     this.message,
-    this.httpMessage,
     this.errorData,
   });
 
   @override
   List<Object?> get props => [
-        statusCode,
+        code,
+        status,
         message,
-        httpMessage,
         errorData,
       ];
 
   @override
   String toString() {
-    return "DataApiFailure(statusCode: $statusCode, message: $message, httpMessage: $httpMessage, errorData: $errorData)";
+    return "DataApiFailure(code: $code, status: $status, message: $message, errorData: $errorData)";
   }
 }

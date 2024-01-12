@@ -4,7 +4,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageManager {
   final String _keyAccessToken = "_keyToken";
-  final String _keyEmployeeId = "_keyEmployeeId";
 
   final storage = const FlutterSecureStorage(
     aOptions: AndroidOptions(

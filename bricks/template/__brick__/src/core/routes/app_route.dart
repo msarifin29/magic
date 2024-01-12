@@ -10,7 +10,7 @@ class AppRoute {
         backgroundColor: Colors.white,
         body: Center(
           child: Text(
-            'Page not fount',
+            'Page not found',
           ),
         ),
       ),
