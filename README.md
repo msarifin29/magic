@@ -12,6 +12,15 @@ Initializing 🎯
 mason init
 ```
 
+Required 
+| -- |
+| min version 3.10.0 |
+
+Packages
+| --- |
+| [dio](https://pub.dev/packages/dio) |
+| [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) |
+
 Usage
 ```
 mason add template --git-url https://github.com/msarifin29/magic --git-path bricks/template
